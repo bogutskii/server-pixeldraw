@@ -2,7 +2,7 @@ import Draw from './Model';
 
 export default function drawAdd(req, res) {
   const { pixelSize, name, field, fieldSize } = req.body;
-  if (errors.isEmpty()) {
+
     const newDraw = new Draw({
       name: name,
       fieldSize: fieldSize,
@@ -17,7 +17,5 @@ export default function drawAdd(req, res) {
       .catch((err) => {
         res.status(400).json('Draw NOT add');
       });
-  } else {
-    return res.status(400).json({ message: 'Draw add  error', errors });
-  }
+
 }

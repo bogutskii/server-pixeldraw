@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 const { Schema } = mongoose;
 
-const userSchema = new Schema({
+const drawSchema = new Schema({
   name: {
     type: String,
     unique: true,
@@ -27,4 +27,4 @@ const userSchema = new Schema({
 
 //userSchema.index({ email: 1 }, { unique: true }); //unique user id in db
 
-export default mongoose.model('Draw', userSchema);
+export default mongoose.model('Draw', drawSchema);

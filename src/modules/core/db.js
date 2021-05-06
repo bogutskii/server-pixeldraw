@@ -1,6 +1,5 @@
 import mongoose from 'mongoose';
 function dbConnect() {
-  //mongoose.connect('mongodb://localhost/express', {
   mongoose.connect(
     'mongodb+srv://admin:0PXxmO8xUa0JCXzA@cluster0.lnqmt.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
     {

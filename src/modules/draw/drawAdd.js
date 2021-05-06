@@ -1,13 +1,14 @@
 import Draw from './Model';
 
 export default function drawAdd(req, res) {
-  const { pixelSize, name, field, fieldSize } = req.body;
+  const { pixelSize, name, field, fieldSize, username } = req.body;
 
     const newDraw = new Draw({
       name: name,
       fieldSize: fieldSize,
       field: field,
       pixelSize: pixelSize,
+      username:username
     });
     newDraw
       .save()

@@ -1,6 +1,6 @@
-import User from './Model';
+import Draw from './Model';
 
-export default function userGetAll(req, res) {
+export default function drawGetAll(req, res) {
   Draw.find()
     // User.find({ email: 'asd@ggg.os' })
     // .limit(2)
@@ -11,6 +11,6 @@ export default function userGetAll(req, res) {
     })
     .catch((err) => {
       console.log(err);
-      res.status(400).json('User get all error');
+      res.status(400).json('draw get all error');
     });
 }

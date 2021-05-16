@@ -4,11 +4,6 @@
   "description": "server for pixel draw",
   "main": "src/index.js",
   "scripts": {
-    "devstart": "nodemon --inspect --exec babel-node src/index.js",
-    "devbuild": "babel src/index.js -d  build",
-    "babel-node": "babel-node --presets='@babel/preset-env' --ignore='foo|bar|baz'",
-    "test": "echo \"Error: no test specified\" && exit 1",
-
     "start": "npm run build && node ./build/index",
     "build": "npm run clean && npm run babel-build",
     "babel-build": "babel -d ./build ./src",

@@ -4,11 +4,16 @@
   "description": "server for pixel draw",
   "main": "src/index.js",
   "scripts": {
-    "run": "nodemon --inspect --exec babel-node src/index.js",
-    "start": "babel-node src/index.js",
+    "devstart": "nodemon --inspect --exec babel-node src/index.js",
+    "devbuild": "babel src/index.js -d  build",
+    "babel-node": "babel-node --presets='@babel/preset-env' --ignore='foo|bar|baz'",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel src/index.js -d  build",
-    "babel-node": "babel-node --presets='@babel/preset-env' --ignore='foo|bar|baz'"
+
+    "start": "npm run build && node ./build/index.js",
+    "build": "npm run clean && npm run babel-build",
+    "babel-build": "babel -d ./build ./src",
+    "clean": "rm -rf ./build && mkdir build",
+    "heroku-postbuild": "npm install && npm run build"
   },
   "engines": {
     "node": "12.x"

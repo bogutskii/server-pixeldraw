@@ -17,6 +17,6 @@ routes(app);
 
 errorHandler(app);
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT || 5000, () => {
   console.log(`Example app listening at http://localhost:${PORT}`);
 });

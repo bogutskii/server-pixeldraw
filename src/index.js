@@ -8,7 +8,7 @@ import routes from './modules/core/routes';
 import dbConnect from './modules/core/db';
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 dbConnect();
 logger(app);
 parseResponse(app);
@@ -17,6 +17,6 @@ routes(app);
 
 errorHandler(app);
 
-app.listen(process.env.PORT || 5000, () => {
+app.listen(PORT, () => {
   console.log(`Example app listening at http://localhost:${PORT}`);
 });

@@ -6,6 +6,6 @@ export default function drawGetAll(req, res) {
       res.status(200).json(result);
     })
     .catch((err) => {
-      res.status(400).json('draw delete all error');
+      res.status(400).json('draw delete all => error:' + err);
     });
 }

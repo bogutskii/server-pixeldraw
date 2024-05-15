@@ -3,15 +3,15 @@ import mongoose from 'mongoose';
 const {
   NODE_ENV,
   MONGO_CONNECTION_STRING_LOCAL = 'mongodb://localhost:27017/draw-server',
-  MONGO_CONNECTION_STRING = 'mongodb+srv://admin:0PXxmO8xUa0JCXzA@cluster0.lnqmt.mongodb.net/draw-server-db?retryWrites=true&w=majority', // for local test
+  MONGO_CONNECTION_STRING = 'mongodb+srv://admin:0PXxmO8xUa0JCXzA@cluster0.gmajaui.mongodb.net',
 } = process.env;
 
 let connectionString;
 
 switch (NODE_ENV) {
 case 'local':
-  connectionString = MONGO_CONNECTION_STRING_LOCAL;
-  break;
+    connectionString = MONGO_CONNECTION_STRING_LOCAL;
+    break;
 default:
   connectionString = MONGO_CONNECTION_STRING;
 }
@@ -36,5 +36,3 @@ export default function dbConnect() {
     console.log('CONNECTED');
   });
 }
-
-// 'mongodb://localhost:27017/draw-server',

@@ -1,7 +1,6 @@
-function apiNotFound(req, res) {
-  res.status(400).json('API not found');
-}
-
-module.exports = function errorHandler(app) {
-  app.use(apiNotFound);
+module.exports = (app) => {
+  app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Something broke!');
+  });
 };

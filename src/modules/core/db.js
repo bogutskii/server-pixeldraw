@@ -9,11 +9,11 @@ const {
 let connectionString;
 
 switch (NODE_ENV) {
-case 'local':
+  case 'local':
     connectionString = MONGO_CONNECTION_STRING_LOCAL;
     break;
-default:
-  connectionString = MONGO_CONNECTION_STRING;
+  default:
+    connectionString = MONGO_CONNECTION_STRING;
 }
 
 const options = {
@@ -24,7 +24,7 @@ const options = {
   useFindAndModify: false,
 };
 
-export default function dbConnect() {
+function dbConnect() {
   mongoose
     .connect(connectionString, options)
     .then(() => console.log('Mongo connected'))
@@ -36,3 +36,5 @@ export default function dbConnect() {
     console.log('CONNECTED');
   });
 }
+
+module.exports = dbConnect;

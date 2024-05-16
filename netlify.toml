@@ -1,9 +1,0 @@
-[functions]
-external_node_modules = ["express", "mongoose", "cors", "body-parser", "morgan", "jsonwebtoken", "bcryptjs", "serverless-http"]
-node_bundler = "esbuild"
-
-[[redirects]]
-from = "/*"
-to = "/.netlify/functions/server"
-status = 200
-force = true

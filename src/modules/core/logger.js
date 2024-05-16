@@ -1,5 +1,5 @@
-const morgan = require('morgan');
+import morgan from 'morgan';
 
-module.exports = function logger(app) {
+export default function logger(app) {
   app.use(morgan('dev'));
-};
+}

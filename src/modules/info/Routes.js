@@ -1,8 +1,7 @@
-const express = require('express');
-const { getInfo } = require('./info');
+import { Router } from 'express';
+import info from './info';
 
-const router = express.Router();
+const router = Router();
 
-router.get('/', getInfo);
-
-module.exports = router;
+router.post('/', info);
+export default router;

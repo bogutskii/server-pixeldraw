@@ -10,18 +10,14 @@ let connectionString;
 
 switch (NODE_ENV) {
 case 'local':
-    connectionString = MONGO_CONNECTION_STRING_LOCAL;
-    break;
+  connectionString = MONGO_CONNECTION_STRING_LOCAL;
+  break;
 default:
   connectionString = MONGO_CONNECTION_STRING;
 }
 
 const options = {
-  useUnifiedTopology: true,
-  useCreateIndex: true,
-  useNewUrlParser: true,
   autoIndex: false,
-  useFindAndModify: false,
 };
 
 export default function dbConnect() {

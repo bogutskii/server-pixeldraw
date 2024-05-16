@@ -1,4 +1,4 @@
-export default function cors(app) {
+module.exports = function cors(app) {
   app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header(
@@ -11,4 +11,4 @@ export default function cors(app) {
     }
     next();
   });
-}
+};

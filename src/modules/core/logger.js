@@ -1,5 +1,5 @@
 import morgan from 'morgan';
 
-export default function logger(app) {
+module.exports = function logger(app) {
   app.use(morgan('dev'));
-}
+};

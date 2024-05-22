@@ -1,4 +1,4 @@
-const names = ['Kenes'];
+const names = ['user2'];
 
 export default function info(req, res) {
   names.push(req.body.name, req.body.email);

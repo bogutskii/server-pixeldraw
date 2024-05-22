@@ -1,9 +1,12 @@
 import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const {
   NODE_ENV,
-  MONGO_CONNECTION_STRING_LOCAL = 'mongodb://localhost:27017/draw-server',
-  MONGO_CONNECTION_STRING = 'mongodb+srv://admin:0PXxmO8xUa0JCXzA@cluster0.gmajaui.mongodb.net',
+  MONGO_CONNECTION_STRING,
+  MONGO_CONNECTION_STRING_LOCAL,
 } = process.env;
 
 let connectionString;
@@ -28,7 +31,7 @@ export default function dbConnect() {
 
   const db = mongoose.connection;
   db.on('error', console.error.bind(console, 'connection error:'));
-  db.once('open', function() {
+  db.once('open', function () {
     console.log('CONNECTED');
   });
 }

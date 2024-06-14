@@ -1,11 +1,10 @@
 import express from 'express';
-import { register, login, deleteAllUsers } from './authController.js';
-import { verifyToken, isAdmin } from '../middleware/authMiddleware';
+import { register, login, refreshToken } from './authController.js';
 
 const router = express.Router();
 
 router.post('/register', register);
 router.post('/login', login);
-router.delete('/delete-all-users', verifyToken, isAdmin, deleteAllUsers);
+router.post('/refresh-token', refreshToken);
 
 export default router;

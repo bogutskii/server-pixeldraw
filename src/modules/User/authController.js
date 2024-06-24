@@ -2,18 +2,19 @@ import bcrypt from 'bcryptjs';
 import User from './userModel.js';
 import CryptoJS from 'crypto-js';
 import jwt from 'jsonwebtoken';
+import dotenv from 'dotenv';
 
+dotenv.config();
 const generateAccessToken = (user) => {
-  return jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '15m' });
+  return jwt.sign({ id: user.id }, process.env.JWT_SECRET, { expiresIn: '15m' });
 };
 
 const generateRefreshToken = (user) => {
-  return jwt.sign({ id: user._id }, process.env.JWT_REFRESH_SECRET, { expiresIn: '30d' });
+  return jwt.sign({ id: user.id }, process.env.JWT_REFRESH_SECRET, { expiresIn: '30d' });
 };
 
 export const register = async (req, res) => {
   const { username, password, email } = req.body;
-
   try {
     const bytes = CryptoJS.AES.decrypt(password, process.env.JWT_SECRET);
     const decryptedPassword = bytes.toString(CryptoJS.enc.Utf8);

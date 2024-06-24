@@ -10,6 +10,6 @@ const router = Router();
 router.post('/', drawAdd);
 router.get('/', drawGetAll);
 router.delete('/', drawDeleteAll);
-router.delete('/:drawId', drawDeleteById);
+router.delete('/:id', drawDeleteById);
 
 export default router;
